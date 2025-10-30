@@ -4,14 +4,16 @@
 // Função recursiva da Torre
 // Move 5 casas para a direita
 // =============================
-void moverTorre(int casas) {
-    if (casas > 0) {
+void moverTorre(int casas)
+{
+    if (casas > 0)
+    {
         printf("Direita\n");
         moverTorre(casas - 1); // chamada recursiva
     }
     else
     {
-        printf("(Torre terminou o movimento)\n");
+        printf("(Torre terminou o movimento!)\n");
     }
 }
 
@@ -20,11 +22,15 @@ void moverTorre(int casas) {
 // Move 5 casas na diagonal (Cima + Direita)
 // Usa loops aninhados dentro da recursão
 // =============================
-void moverBispo(int casas) {
-    if (casas > 0) {
-        for (int i = 0; i < 1; i++) {        // movimento vertical (Cima)
+void moverBispo(int casas)
+{
+    if (casas > 0)
+    {
+        for (int i = 0; i < 1; i++)
+        { // movimento vertical (Cima)
             printf("Cima\n");
-            for (int j = 0; j < 1; j++) {    // movimento horizontal (Direita)
+            for (int j = 0; j < 1; j++)
+            { // movimento horizontal (Direita)
                 printf("Direita\n");
             }
         }
@@ -32,7 +38,7 @@ void moverBispo(int casas) {
     }
     else
     {
-        printf("(Bispo terminou o movimento)\n");
+        printf("(Bispo terminou o movimento!)\n");
     }
 }
 
@@ -40,14 +46,16 @@ void moverBispo(int casas) {
 // Função recursiva da Rainha
 // Move 8 casas para a esquerda
 // =============================
-void moverRainha(int casas) {
-    if (casas > 0) {
+void moverRainha(int casas)
+{
+    if (casas > 0)
+    {
         printf("Esquerda\n");
         moverRainha(casas - 1); // chamada recursiva
     }
     else
     {
-        printf("(Rainha terminou o movimento)\n");
+        printf("(Rainha terminou o movimento!)\n");
     }
 }
 
@@ -56,32 +64,37 @@ void moverRainha(int casas) {
 // Movimento em “L”: 2 para cima e 1 para a direita
 // Usa loops aninhados e controle de fluxo
 // =============================
-void moverCavalo() {
+void moverCavalo()
+{
     int movimentosVerticais = 2;
     int movimentosHorizontais = 1;
 
-    for (int i = 1; i <= movimentosVerticais; i++) {
+    for (int i = 1; i <= movimentosVerticais; i++)
+    {
         printf("Cima (%d)\n", i);
 
-        if (i == 2) { // só move para a direita após subir 2 casas
-            for (int j = 1; j <= movimentosHorizontais; j++) {
+        if (i == 2)
+        { // só move para a direita após subir 2 casas
+            for (int j = 1; j <= movimentosHorizontais; j++)
+            {
                 if (j > 1)
                     break; // impede múltiplos movimentos laterais
                 printf("Direita (%d)\n", j);
             }
         }
     }
-     printf("(Cavalo terminou o movimento em L)\n");
+    printf("(Cavalo terminou o movimento em L!)\n");
 }
-
 
 // =============================
 // Função principal (menu)
 // =============================
-int main() {
+int main()
+{
     int opcao;
 
-    do {
+    do
+    {
         printf("\n=== MENU DE JOGADAS ===\n");
         printf("1 - Mover a Torre\n");
         printf("2 - Mover o Bispo\n");
@@ -93,24 +106,25 @@ int main() {
 
         printf("\n-----------------------------\n");
 
-        switch (opcao) {
+        switch (opcao)
+        {
         case 1:
-            printf("=== Movimentos da Torre ===\n");
+            printf("=== Movimentos da Torre! ===\n");
             moverTorre(5);
             break;
 
         case 2:
-            printf("=== Movimentos do Bispo ===\n");
+            printf("=== Movimentos do Bispo! ===\n");
             moverBispo(5);
             break;
 
         case 3:
-            printf("=== Movimentos do Cavalo ===\n");
+            printf("=== Movimentos do Cavalo! ===\n");
             moverCavalo();
             break;
 
         case 4:
-            printf("=== Movimentos da Rainha ===\n");
+            printf("=== Movimentos da Rainha! ===\n");
             moverRainha(8);
             break;
 
